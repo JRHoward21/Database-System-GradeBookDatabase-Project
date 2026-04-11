@@ -1,0 +1,191 @@
+Contents of students
+student_id | first_name | last_name | email                  
+-----------+------------+-----------+------------------------
+1          | David      | Mack      | david.mack@example.com 
+2          | Aisha      | Quinn     | aisha.quinn@example.com
+3          | Marcus     | Cole      | marcus.cole@example.com
+4          | Nia        | Brown     | nia.brown@example.com  
+
+Contents of courses
+course_id | department | course_number | course_name                        | semester | year
+----------+------------+---------------+------------------------------------+----------+-----
+1         | CSCI       | 340           | Database Systems                   | Spring   | 2026
+2         | CSCI       | 350           | Structure of Programming Languages | Spring   | 2026
+
+Contents of enrollments
+enrollment_id | student_id | course_id
+--------------+------------+----------
+1             | 1          | 1        
+2             | 2          | 1        
+3             | 3          | 1        
+4             | 4          | 1        
+5             | 1          | 2        
+6             | 2          | 2        
+7             | 4          | 2        
+
+Contents of category_weights
+category_id | course_id | category_name | percentage
+------------+-----------+---------------+-----------
+1           | 1         | Participation | 10.0      
+2           | 1         | Homework      | 20.0      
+3           | 1         | Tests         | 50.0      
+4           | 1         | Projects      | 20.0      
+5           | 2         | Homework      | 40.0      
+6           | 2         | Exams         | 60.0      
+
+Contents of assignments
+assignment_id | course_id | category_id | assignment_name | perfect_score | due_date  
+--------------+-----------+-------------+-----------------+---------------+-----------
+1             | 1         | 1           | Participation   | 100.0         | 2026-02-01
+2             | 1         | 2           | Homework 1      | 100.0         | 2026-02-08
+3             | 1         | 2           | Homework 2      | 100.0         | 2026-02-15
+4             | 1         | 2           | Homework 3      | 100.0         | 2026-02-22
+5             | 1         | 2           | Homework 4      | 100.0         | 2026-03-01
+6             | 1         | 2           | Homework 5      | 100.0         | 2026-03-08
+7             | 1         | 3           | Test 1          | 100.0         | 2026-03-20
+8             | 1         | 3           | Test 2          | 100.0         | 2026-04-10
+9             | 1         | 4           | Project 1       | 100.0         | 2026-04-25
+10            | 2         | 5           | HW A            | 100.0         | 2026-02-10
+11            | 2         | 5           | HW B            | 100.0         | 2026-03-10
+12            | 2         | 6           | Midterm         | 100.0         | 2026-03-25
+
+Contents of scores
+score_id | assignment_id | student_id | score
+---------+---------------+------------+------
+1        | 1             | 1          | 100.0
+2        | 1             | 2          | 95.0 
+3        | 1             | 3          | 88.0 
+4        | 1             | 4          | 91.0 
+5        | 2             | 1          | 96.0 
+6        | 2             | 2          | 85.0 
+7        | 2             | 3          | 77.0 
+8        | 2             | 4          | 90.0 
+9        | 3             | 1          | 92.0 
+10       | 3             | 2          | 88.0 
+11       | 3             | 3          | 80.0 
+12       | 3             | 4          | 93.0 
+13       | 4             | 1          | 100.0
+14       | 4             | 2          | 82.0 
+15       | 4             | 3          | 76.0 
+16       | 4             | 4          | 95.0 
+17       | 5             | 1          | 94.0 
+18       | 5             | 2          | 86.0 
+19       | 5             | 3          | 79.0 
+20       | 5             | 4          | 89.0 
+21       | 6             | 1          | 98.0 
+22       | 6             | 2          | 90.0 
+23       | 6             | 3          | 84.0 
+24       | 6             | 4          | 92.0 
+25       | 7             | 1          | 87.0 
+26       | 7             | 2          | 75.0 
+27       | 7             | 3          | 81.0 
+28       | 7             | 4          | 88.0 
+29       | 8             | 1          | 91.0 
+30       | 8             | 2          | 84.0 
+31       | 8             | 3          | 78.0 
+32       | 8             | 4          | 90.0 
+33       | 9             | 1          | 95.0 
+34       | 9             | 2          | 89.0 
+35       | 9             | 3          | 83.0 
+36       | 9             | 4          | 94.0 
+37       | 10            | 1          | 93.0 
+38       | 10            | 2          | 85.0 
+39       | 10            | 4          | 97.0 
+40       | 11            | 1          | 90.0 
+41       | 11            | 2          | 88.0 
+42       | 11            | 4          | 96.0 
+43       | 12            | 1          | 92.0 
+44       | 12            | 2          | 80.0 
+45       | 12            | 4          | 94.0 
+
+Task 4 - Avg/Highest/Lowest for Homework 1
+assignment_name | ROUND(AVG(s.score), 2) | MAX(s.score) | MIN(s.score)
+----------------+------------------------+--------------+-------------
+Homework 1      | 87.0                   | 96.0         | 77.0        
+
+Task 5 - Students in CSCI 340
+student_id | first_name | last_name | email                  
+-----------+------------+-----------+------------------------
+4          | Nia        | Brown     | nia.brown@example.com  
+3          | Marcus     | Cole      | marcus.cole@example.com
+1          | David      | Mack      | david.mack@example.com 
+2          | Aisha      | Quinn     | aisha.quinn@example.com
+
+Task 6 - Every student and every assignment score
+student_id | first_name | last_name | assignment_name | score
+-----------+------------+-----------+-----------------+------
+4          | Nia        | Brown     | Participation   | 91.0 
+4          | Nia        | Brown     | Homework 1      | 90.0 
+4          | Nia        | Brown     | Homework 2      | 93.0 
+4          | Nia        | Brown     | Homework 3      | 95.0 
+4          | Nia        | Brown     | Homework 4      | 89.0 
+4          | Nia        | Brown     | Homework 5      | 92.0 
+4          | Nia        | Brown     | Test 1          | 88.0 
+4          | Nia        | Brown     | Test 2          | 90.0 
+4          | Nia        | Brown     | Project 1       | 94.0 
+3          | Marcus     | Cole      | Participation   | 88.0 
+3          | Marcus     | Cole      | Homework 1      | 77.0 
+3          | Marcus     | Cole      | Homework 2      | 80.0 
+3          | Marcus     | Cole      | Homework 3      | 76.0 
+3          | Marcus     | Cole      | Homework 4      | 79.0 
+3          | Marcus     | Cole      | Homework 5      | 84.0 
+3          | Marcus     | Cole      | Test 1          | 81.0 
+3          | Marcus     | Cole      | Test 2          | 78.0 
+3          | Marcus     | Cole      | Project 1       | 83.0 
+1          | David      | Mack      | Participation   | 100.0
+1          | David      | Mack      | Homework 1      | 96.0 
+1          | David      | Mack      | Homework 2      | 92.0 
+1          | David      | Mack      | Homework 3      | 100.0
+1          | David      | Mack      | Homework 4      | 94.0 
+1          | David      | Mack      | Homework 5      | 98.0 
+1          | David      | Mack      | Test 1          | 87.0 
+1          | David      | Mack      | Test 2          | 91.0 
+1          | David      | Mack      | Project 1       | 95.0 
+2          | Aisha      | Quinn     | Participation   | 95.0 
+2          | Aisha      | Quinn     | Homework 1      | 85.0 
+2          | Aisha      | Quinn     | Homework 2      | 88.0 
+2          | Aisha      | Quinn     | Homework 3      | 82.0 
+2          | Aisha      | Quinn     | Homework 4      | 86.0 
+2          | Aisha      | Quinn     | Homework 5      | 90.0 
+2          | Aisha      | Quinn     | Test 1          | 75.0 
+2          | Aisha      | Quinn     | Test 2          | 84.0 
+2          | Aisha      | Quinn     | Project 1       | 89.0 
+
+Task 7 - Added assignment
+assignment_id | assignment_name | category_id | due_date  
+--------------+-----------------+-------------+-----------
+13            | Project 2       | 4           | 2026-05-05
+
+Task 8 - Updated category percentages
+category_name | percentage
+--------------+-----------
+Participation | 5.0       
+Homework      | 25.0      
+Tests         | 45.0      
+Projects      | 25.0      
+
+Task 9 - Homework 1 after +2 points
+student_id | score
+-----------+------
+1          | 98.0 
+2          | 87.0 
+3          | 79.0 
+4          | 92.0 
+
+Task 10 - Homework 2 after +2 for last name containing Q
+student_id | score
+-----------+------
+1          | 92.0 
+2          | 90.0 
+3          | 80.0 
+4          | 93.0 
+
+Task 11 - Final grade for student 1
+student_id | final_grade
+-----------+------------
+1          | 92.7       
+
+Task 12 - Final grade for student 1 with lowest category score dropped
+student_id | final_grade_drop_lowest
+-----------+------------------------
+1          | 93.9                   
