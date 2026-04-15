@@ -1,12 +1,12 @@
 # Grade Book Database Project
 
-This repository contains a corrected, GitHub-ready solution for the **Create a Grade Book Database** assignment. The project models students, courses, enrollments, grading categories, assignments, and scores. It includes the database schema, sample data, required SQL tasks, advanced SQL queries, a Python runner, test output, and a LaTeX ER diagram.
+This repository contains a corrected, GitHub-ready solution for the **Create a Grade Book Database** assignment. The project models students, courses, enrollments, grading categories, assignments, and scores. It includes the database schema, sample data, required SQL tasks, a Python runner, test output, and an ER diagram.
 
 ## What was improved
 
 - Added stronger integrity constraints such as `NOT NULL`, `UNIQUE`, and `CHECK`
-- Added a LaTeX ER diagram in `ERD.tex`
-- Included advanced SQL queries using `HAVING`, aggregation, and ranking
+- Added an ER diagram in `ERD.md` and `ERD.pdf`
+- Included the SQL commands for Tasks 4–12
 - Kept a larger sample dataset so the queries are more meaningful
 - Regenerated test output after corrections
 
@@ -20,7 +20,7 @@ gradebook-database-project/
 ├── queries.sql
 ├── run_project.py
 ├── ERD.md
-├── ERD.tex
+├── ERD.pdf
 ├── gradebook.db
 └── test_results.txt
 ```

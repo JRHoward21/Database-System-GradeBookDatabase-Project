@@ -163,3 +163,15 @@ LEFT JOIN assignments a ON cw.category_id = a.category_id
 WHERE cw.course_id = 1
 GROUP BY cw.category_name
 ORDER BY assignments_in_category DESC, cw.category_name;
+
+-- Validation: category percentages per course should total 100
+SELECT
+    c.course_id,
+    c.department,
+    c.course_number,
+    c.semester,
+    c.year,
+    SUM(cw.percentage) AS total_percentage
+FROM courses c
+JOIN category_weights cw ON c.course_id = cw.course_id
+GROUP BY c.course_id, c.department, c.course_number, c.semester, c.year;

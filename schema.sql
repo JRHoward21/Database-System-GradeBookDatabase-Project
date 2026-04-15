@@ -42,6 +42,34 @@ CREATE TABLE category_weights (
     UNIQUE(course_id, category_name)
 );
 
+CREATE TRIGGER validate_category_weights_insert
+AFTER INSERT ON category_weights
+BEGIN
+    SELECT
+        CASE
+            WHEN (
+                SELECT ROUND(SUM(percentage), 5)
+                FROM category_weights
+                WHERE course_id = NEW.course_id
+            ) > 100
+            THEN RAISE(ABORT, 'Category percentages for a course cannot exceed 100')
+        END;
+END;
+
+CREATE TRIGGER validate_category_weights_update
+AFTER UPDATE OF percentage, course_id ON category_weights
+BEGIN
+    SELECT
+        CASE
+            WHEN (
+                SELECT ROUND(SUM(percentage), 5)
+                FROM category_weights
+                WHERE course_id = NEW.course_id
+            ) > 100
+            THEN RAISE(ABORT, 'Category percentages for a course cannot exceed 100')
+        END;
+END;
+
 CREATE TABLE assignments (
     assignment_id INTEGER PRIMARY KEY,
     course_id INTEGER NOT NULL,
