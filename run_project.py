@@ -95,17 +95,24 @@ def main() -> None:
     rows = fetch_rows(cur, "SELECT assignment_id, assignment_name, category_id, due_date FROM assignments WHERE assignment_id = 13;")
     outputs.append(format_rows("Task 7 - Added assignment", [d[0] for d in cur.description], rows))
 
-    # Task 8
+        # Task 8
     cur.executescript(
         """
         UPDATE category_weights
-        SET percentage = CASE category_name
-            WHEN 'Participation' THEN 5
-            WHEN 'Homework' THEN 25
-            WHEN 'Tests' THEN 45
-            WHEN 'Projects' THEN 25
-        END
-        WHERE course_id = 1;
+        SET percentage = 5
+        WHERE course_id = 1 AND category_name = 'Participation';
+
+        UPDATE category_weights
+        SET percentage = 45
+        WHERE course_id = 1 AND category_name = 'Tests';
+
+        UPDATE category_weights
+        SET percentage = 25
+        WHERE course_id = 1 AND category_name = 'Homework';
+
+        UPDATE category_weights
+        SET percentage = 25
+        WHERE course_id = 1 AND category_name = 'Projects';
         """
     )
     rows = fetch_rows(cur, "SELECT category_name, percentage FROM category_weights WHERE course_id = 1 ORDER BY category_id;")
@@ -115,13 +122,20 @@ def main() -> None:
     cur.executescript(
         """
         UPDATE category_weights
-        SET percentage = CASE category_name
-            WHEN 'Participation' THEN 10
-            WHEN 'Homework' THEN 20
-            WHEN 'Tests' THEN 50
-            WHEN 'Projects' THEN 20
-        END
-        WHERE course_id = 1;
+        SET percentage = 20
+        WHERE course_id = 1 AND category_name = 'Projects';
+
+        UPDATE category_weights
+        SET percentage = 20
+        WHERE course_id = 1 AND category_name = 'Homework';
+
+        UPDATE category_weights
+        SET percentage = 50
+        WHERE course_id = 1 AND category_name = 'Tests';
+
+        UPDATE category_weights
+        SET percentage = 10
+        WHERE course_id = 1 AND category_name = 'Participation';
         """
     )
 
