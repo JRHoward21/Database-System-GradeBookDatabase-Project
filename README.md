@@ -6,7 +6,7 @@ This repository contains a corrected, GitHub-ready solution for the **Create a G
 
 - Added stronger integrity constraints such as `NOT NULL`, `UNIQUE`, and `CHECK`
 - Added an ER diagram in `ERD.md` and `ERD.pdf`
-- Included the SQL commands for Tasks 4–12
+- Included the SQL commands for Tasks 4-12
 - Kept a larger sample dataset so the queries are more meaningful
 - Regenerated test output after corrections
 
@@ -42,7 +42,7 @@ gradebook-database-project/
 4. `scores` stores one score per student per assignment.
 5. Constraints help protect data quality.
 
-## Assginment Coverage
+## Assignment Coverage
 - The ER diagram with attributes, primary keys, and foreign keys
 - The commands for creating tables and inserting values
 - The tables with the contents that were inserted
@@ -68,7 +68,7 @@ This creates:
 - `queries.sql` - SQL commands for Tasks 4-12
 - `run_project.py` - source code used to execute and test the project
 - `ERD.md` / `ERD.pdf` - ER diagram
-- `test_result.txt` - inserted table contents and query results
+- `test_results.txt` - inserted table contents and query results
 
 ## Notes
 - Each grading category percentage is stored in `category_weights`.
